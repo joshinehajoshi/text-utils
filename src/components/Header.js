@@ -3,12 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import PropTypes from 'prop-types';
 
-function Header() {
+function Header(props) {
   return (
     <Navbar bg="light" expand="lg">
     <Container>
-      <Navbar.Brand href="#home">Test Utils</Navbar.Brand>
+      <Navbar.Brand href="#home">{props.title}</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
@@ -31,5 +32,7 @@ function Header() {
   </Navbar>
   )
 }
+
+Header.propTypes = {title : PropTypes.string}
 
 export default Header
