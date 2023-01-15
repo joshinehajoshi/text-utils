@@ -16,6 +16,11 @@ function TextForm(props) {
        setText(text1)
     }
 
+    const LowerCaseHandler = () => {
+        const text1 = text.toLowerCase();
+       setText(text1)
+    }
+
   return (
     <Container>
     <h1>{props.heading}</h1>
@@ -23,7 +28,8 @@ function TextForm(props) {
     <label htmlFor="myBox" className="form-label">Example Textarea</label>
     <textarea className='form-control' value={text} id="myBox" rows="10" onChange={handleChange} ></textarea>
     </div>
-    <Button onClick={UpperCaseHandler}>Convert to Upper Case</Button>
+    <Button onClick={UpperCaseHandler}>Convert to Upper Case</Button> <br />
+    <Button onClick={LowerCaseHandler}>Convert to Upper Case</Button>
 
     <div className='mb-3'>
         <h3>Text Summary</h3>
